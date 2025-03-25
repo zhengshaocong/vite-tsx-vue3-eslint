@@ -17,6 +17,7 @@
           :key="index"
           class="li-item"
           :class="{ hide: !activeArray[index - 1] }"
+          @click="goPage(activeArray[index - 1].path)"
         >
           <template v-if="activeArray[index - 1]">
             <div class="li-title">
@@ -34,6 +35,7 @@
 
 <script lang="ts">
   import { defineComponent, computed, ref } from 'vue'
+  import { useRouter } from 'vue-router'
   import type { PropType } from 'vue'
   import type { Navigation, NavigationItem } from '@/types/navigation-class'
 
@@ -75,12 +77,19 @@
         return props.items[props.active].title
       })
 
+      const router = useRouter()
+
+      const goPage = (path: string) => {
+        if (path) router.push({ path })
+      }
+
       return {
         breadcrumbItems: props.items,
         navigateTo,
         activeArray,
         activeTitle,
-        animation
+        animation,
+        goPage
       }
     }
   })

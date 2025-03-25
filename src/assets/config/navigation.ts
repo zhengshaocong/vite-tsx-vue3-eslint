@@ -39,7 +39,7 @@ export const navigation = [
       },
       {
         title: '无人机巡检',
-        path: '',
+        path: 'DroneInspection',
         explain:
           '无人机巡检是一种通过无人机搭载传感器，在空中进行巡检，获取项目现场数据，如设备运行状态、环境条件、人员安全等，以评估项目状态的方法。'
       },
