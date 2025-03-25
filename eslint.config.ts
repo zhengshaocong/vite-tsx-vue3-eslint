@@ -118,18 +118,12 @@ export default defineConfigWithVueTs(
   },
   // 集成 Prettier 规则（关键步骤）
   {
-    files: ['**/*.{js,ts}'],
     plugins: {
       prettier: eslintPluginPrettier
     },
     rules: {
-      // 强制 Prettier 规则优先
-      ...eslintConfigPrettier.rules, // 关闭所有冲突的 ESLint 规则
-      'prettier/prettier': [
-        'error',
-        {}, // 显式加载 .prettierrc.js 的配置
-        { usePrettierrc: true } // 确保读取项目中的配置文件
-      ]
+      ...eslintConfigPrettier.rules, // 关闭冲突规则
+      'prettier/prettier': 'error' // 将 Prettier 作为 ESLint 规则
     }
   }
 )
