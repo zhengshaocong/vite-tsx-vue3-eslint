@@ -95,7 +95,7 @@ export default defineConfigWithVueTs(
 
       // TypeScript 相关
       '@typescript-eslint/no-explicit-any': 'error', // 禁止使用 any 类型
-      '@typescript-eslint/no-non-null-assertion': 'error', // 禁止使用非空断言
+      // '@typescript-eslint/no-non-null-assertion': 'error', // 禁止使用非空断言
       '@typescript-eslint/explicit-module-boundary-types': 'error', // 强制函数返回类型明确
       'no-trailing-spaces': [
         'error',
